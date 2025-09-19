@@ -1,0 +1,9 @@
+# Override file for building from source instead of using pre-built image
+# To use this, run: docker-compose -f docker-compose.yaml -f docker-compose.override.yaml up
+
+services:
+  valhalla:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile-scripted
+    image: valhalla-scripted:local
